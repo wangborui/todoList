@@ -1,0 +1,17 @@
+<%- include('header'); -%>
+  <div class="box" id="heading">
+    <h1>Today is <%= day %></h1>
+  </div>
+  <div class="box">
+    <% newItems.map((newItem)=>{%>
+      <div class="item">
+        <input type="checkbox">
+        <p ><%= newItem %></p>
+      </div>
+    <%}) %>
+    <form action="/" method="post">
+      <input type="text" name="newItem" placeholder="Add Item" autocomplete="off">
+      <button type="submit" name="button" value="<%= day %>">+</button>
+    </form>
+  </div>
+<%- include('footer'); -%>
